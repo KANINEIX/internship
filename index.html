@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link  rel="stylesheet" href="css/mainForm.css">
+    <title>Form Page</title>
+</head>
+<body bgcolor="#F98A45">
+    <h1 align="center" class="txt1">Input Page</h1><br><br>
+
+	<table align="center" width="70%"><thead><td>
+    <form id="inputForm" action="report.html" method="get">
+        <label for="nameSurname"><b>Name and Surname:</b></label><br>
+        <input type="text" id="nameSurname" name="nameSurname" required><br><br>
+
+        <label for="documentDate"><b>Document Date:</b></label>
+        <input type="date" id="documentDate" name="documentDate" required><br><br>
+
+        <label for="duration"><b>Duration:</b></label><br><br>
+        From <input type="text" id="duration1" name="duration1" class="inputtext" pattern="\d{2}-[A-za-z]{3}-\d{4}" placeholder="dd-mmm-yy ex. 02-May-2024" required> 
+		To <input type="text" id="duration2" name="duration2" class="inputtext" pattern="\d{2}-[A-za-z]{3}-\d{4}" placeholder="dd-mmm-yy ex. 28-Mar-2025" required><br><br>
+
+        <label for="amount"><b>Amount:</b></label><br>
+        <input type="number" id="amount" name="amount" required><br><br>
+
+        <label for="place"><b>Place:</b></label><br>
+        <textarea type="text" id="place" name="place" rows="4" cols="100" required></textarea><br><br>
+
+        <label for="idCard"><b>ID Card Number:</b></label><br>
+        <input type="text" id="idCard" name="idCard" pattern="\d{1}-\d{4}-\d{5}-\d{2}-\d{1}" placeholder="x-xxxx-xxxxx-xx-x" required><br><br>
+
+        <center>
+			<input type="submit"></input>
+			<input type="reset" onclick="document.getElementById('inputForm').reset()"></input>
+		</center>
+    </form>
+</td></thead></table>
+</body>
+</html>

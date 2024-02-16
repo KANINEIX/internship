@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link  rel="stylesheet" href="css/mainForm.css">
+    <title>Report Page</title>
+</head>
+<body bgcolor="#F98A45">
+    <h1 align="center" class="txt2">Report Page</h1><br><br>
+
+	<table align="center" width="80%"><thead>
+		<tr>
+			<td width="30%" align="right"><p><strong>Name and Surname:&nbsp;&nbsp;</strong></p></td>
+			<td width="70%" align="left"><p><span id="reportNameSurname"></span></p></td>
+		</tr><tr>
+			<td width="30%" align="right"><p><strong>Document Date:&nbsp;&nbsp;</strong></p></td>
+			<td width="70%" align="left"><p><span id="reportDocumentDate"></span></p></td>
+		</tr><tr>
+			<td width="30%" align="right"><p><strong>Duration:&nbsp;&nbsp;</strong></p></td>
+			<td width="70%" align="left"><p>From &nbsp;&nbsp;<span id="reportDuration1"></span>&nbsp;&nbsp; To &nbsp;&nbsp;<span id="reportDuration2"></span></p></td>
+		</tr><tr>
+			<td width="30%" align="right"><p><strong>Amount:&nbsp;&nbsp;</strong></p></td>
+			<td width="70%" align="left"><p><span id="reportAmount"></span></p></td>
+		</tr><tr>
+			<td width="30%" align="right"><p><strong>Place:&nbsp;&nbsp;</strong></p></td>
+			<td width="70%" align="left"><p><span id="reportPlace"></span></p></td>
+		</tr><tr>
+			<td width="30%" align="right"><p><strong>ID Card Number:&nbsp;&nbsp;</strong></p></td>
+			<td width="70%" align="left"><p><span id="reportIdCard"></span></p></td>
+		</tr>
+	</thead></table><br><br><br><br>
+	<center>
+		<button type="button" value="Print Report" onClick="window.print()">Print Report</button>
+		<input type="button" onclick="window.history.back()" value="Back"></input>
+	</center>
+
+    <script>
+        // Get query parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Function to get a parameter value by name
+        const getParam = (name) => urlParams.get(name) || '';
+
+        // Set values in the report
+        document.getElementById('reportNameSurname').innerText = getParam('nameSurname');
+        document.getElementById('reportDocumentDate').innerText = getParam('documentDate');
+        document.getElementById('reportDuration1').innerText = getParam('duration1');
+		document.getElementById('reportDuration2').innerText = getParam('duration2');
+        document.getElementById('reportAmount').innerText = getParam('amount');
+        document.getElementById('reportPlace').innerText = getParam('place');
+        document.getElementById('reportIdCard').innerText = getParam('idCard');
+    </script>
+</body>
+</html>
